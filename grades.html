@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4">
+  <h3>Your Grades (Read Only)</h3>
+
+  {% if grades %}
+    <table class="table table-bordered mt-3">
+      <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Grade</th>
+      </tr>
+      {% for g in grades %}
+        <tr>
+          <td>{{ g[0] }}</td>
+          <td>{{ g[1] }}</td>
+          <td>{{ g[2] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p class="text-muted mt-2">No grades found.</p>
+  {% endif %}
+
+  <a class="btn btn-link" href="/dashboard">Back</a>
+</div>
+{% endblock %}

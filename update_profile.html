@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4">
+  <h3>Update Profile</h3>
+  <form method="post">
+    <input class="form-control mb-2" name="name" value="{{ name }}" placeholder="Name" required>
+    <input class="form-control mb-2" name="email" value="{{ email }}" placeholder="Email" required>
+    <button class="btn btn-primary">Update</button>
+    <a class="btn btn-link" href="/dashboard">Back</a>
+  </form>
+</div>
+{% endblock %}
